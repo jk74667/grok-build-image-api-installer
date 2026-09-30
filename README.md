@@ -15,9 +15,10 @@ irm https://raw.githubusercontent.com/jk74667/grok-build-image-api-installer/mai
 The installer backs up an existing `~/.grok/bin/grok.exe` as
 `~/.grok/bin/grok-previous.exe`, installs the patched 1.0.45 executable as
 `grok.exe`, and adds that directory to the user `PATH`. It disables the official
-auto-updater so it cannot replace the patched executable. It prompts for the
-image-only PackyAPI key and base URL, saves them as user environment variables,
-and leaves chat credentials unchanged. The key is never included in this public
+auto-updater so it cannot replace the patched executable. It prompts only for
+`GROK_IMAGE_API_KEY` and uses `https://cf.api.fan/v1` with
+`grok-imagine-image-2.0`. It saves only the image key as a user environment variable and
+leaves chat credentials unchanged. The key is never included in this public
 repository or shown in installer output.
 
 After installation, run `grok --version`, then start `grok` and try

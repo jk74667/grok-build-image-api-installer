@@ -68,7 +68,7 @@ try {
         $installedBin = if ($InstallDir) { [System.IO.Path]::GetFullPath($InstallDir) } else { Join-Path $HOME '.grok\bin' }
         $env:Path = "$installedBin;$env:Path"
         $env:GROK_DISABLE_AUTOUPDATER = '1'
-        foreach ($variableName in @('PACKY_IMAGE_BASE_URL', 'PACKY_IMAGE_API_KEY', 'PACKY_IMAGE_MODEL')) {
+        foreach ($variableName in @('GROK_IMAGE_API_KEY')) {
             $value = [Environment]::GetEnvironmentVariable($variableName, 'User')
             if ($value) {
                 Set-Item -Path "Env:$variableName" -Value $value
